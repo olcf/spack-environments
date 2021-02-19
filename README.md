@@ -1,6 +1,8 @@
-# OCLF User Environment
+# OCLF User Environment - NOT FOR USE - IN DEVELOPMENT
 
-Spack Environment files to assist OLCF users in setup their development environment at the OLCF
+## This is non-working, untested placeholder example.
+
+Spack Environment files to assist OLCF users in setup their development environment at the OLCF.
 
 ## Getting Started
 
