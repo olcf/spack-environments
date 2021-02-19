@@ -4,7 +4,8 @@ Spack Environment files to assist OLCF users in setup their development environm
 
 ## Getting Started
 
-Clone this repo and the Spack repo, start a new Spack instance, and create and activate a new Spack environment:
+Clone this repo and the Spack repo, start a new Spack instance,
+and create and activate a new Spack environment:
 
 ```
 git clone https://code.ornl.gov/2ff/olcf-user-environments.git
@@ -16,6 +17,8 @@ source spack/share/spack/setup-env.sh
 spack env create my_env general-user-olcf-summit-rhel8-spack.yaml
 spack env activate my_env
 ```
+
+Now a user can install their dependencies and proceed with developing their application.
 
 ## Add Dependencies
 
