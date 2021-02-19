@@ -18,7 +18,7 @@ spack env create my_env general-user-olcf-summit-rhel8-spack.yaml
 spack env activate my_env
 ```
 
-Now a user can install their dependencies and proceed with developing their application.
+Now a user can load and install their dependencies with Spack and proceed with developing their application.
 
 ## Add Dependencies
 
