@@ -16,7 +16,7 @@ cd olcf-user-environments
 git clone https://github.com/spack/spack.git
 source spack/share/spack/setup-env.sh
 
-spack env create my_env general-user-olcf-summit-rhel8-spack.yaml
+spack env create my_env linux-rhel7-ppc64le/summit/spack.yaml
 spack env activate my_env
 ```
 

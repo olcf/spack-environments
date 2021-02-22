@@ -1,6 +1,6 @@
 # NOT FOR USE - THIS IS ONLY AN EXAMPLE
 
-# OLCF Summit Spack Environment
+# OLCF Summit Spack Environment (RHEL8)
 
 spack:
   specs: [] # FIXME Add necessary dependencies here
@@ -21,23 +21,23 @@ spack:
     #     modules:
     #     - cmake/3.18.2
     spectrum-mpi:
-      version: [10.3.1.2-20200121]
+      version: [10.4.0.3-20210112]
       target: []
       compiler: []
       buildable: false
       providers: {}
       externals:
-      - spec: spectrum-mpi@10.3.1.2-20200121
+      - spec: spectrum-mpi@10.4.0.3-20210112
         modules:
-        - spectrum-mpi/10.3.1.2-20200121
+        - spectrum-mpi/10.4.0.3-20210112
     cuda:
       buildable: false
       version:
-      - 10.1.243
+      - 11.0.2
       externals:
-      - spec: cuda@10.1.243
+      - spec: cuda@11.0.2
         modules:
-        - cuda/10.1.243
+        - cuda/11.0.2
       target: []
       providers: {}
       compiler: []
@@ -113,7 +113,6 @@ spack:
       blacklist_implicits: false
       verbose: true
       whitelist: []
-# ONLY FOR RHEL8
   upstreams:
     olcf:
       install_tree: /sw/summit/spack-envs/base/opt
@@ -131,7 +130,7 @@ spack:
     build_stage:
     - $tempdir/$user/spack-stage
     - $spack/var/spack/stage
-    misc_cache: $spack/var/spack/.mcache
+    misc_cache: $spack/var/spack/.mcache # TODO: directory must be created prior to use
     verify_ssl: true
     install_missing_compilers: false
     checksum: true
