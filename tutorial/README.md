@@ -47,7 +47,7 @@ To execute the application:
 
 #### Simulate change to a dependency.
 
-Here we will update the dependency manually so that we can simulate a bugfix or a new feature being added to BLAS++ that we wish to include in our example application.  To do this navigate to and edit the file `$SPACK_ROOT/var/spack/repos/builtin/packages/blaspp/package.py`.  Add the following at line 21:
+Here we will update the dependency manually so that we can simulate a bugfix or a new feature being added to BLAS++ that we wish to include in our example application.  To do this, execute `spack edit blaspp` or navigate to and edit the file `$SPACK_ROOT/var/spack/repos/builtin/packages/blaspp/package.py`.  Add the following at line 21:
 
 ```
 20:    version('master', branch='master')
