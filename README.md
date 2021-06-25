@@ -2,9 +2,11 @@
 
 ## This is somewhat tested placeholder example.
 
+This example is intended for use on Summit with RHEL 7 as the OS.
+
 ## Purpose
 
-This guide meant as an example for a user to setup a Spock environment for application development using the OLCF 
+This guide meant as an example for a user to setup a Spack environment for application development using the OLCF 
 provided files as a template.
 
 The provided Spack environment files are intended to assist OLCF users in setup their development environment at the 
