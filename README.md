@@ -42,17 +42,6 @@ Now a user can add and install their dependencies with Spack and proceed with de
 
 ## Add Dependencies to the environment
 
-### Adding User-Defined Dependencies to the environment
-
-These can be added to the `spack.yaml` by adding to the `spec` section.  A dependency that is not already installed
-will be built via Spack once the environment is concretized and installed.
-
-```
-  specs:
-  - my_apps_dependency1@version%compiler
-  - my_apps_dependency2@version%compiler
-```
-
 ### Adding OLCF Installed Dependencies as External Packages
 
 If an OLCF installed package is available, these can be added via the `spack.yaml` file by adding to the `packages`
@@ -73,7 +62,19 @@ listed modulefile.  If this is not indicated, Spack may build its own version of
         - cmake/3.18.2
 ```
 
-### Installing Dependencies
+### Adding User-Defined Dependencies to the environment
+
+These can be added to the `spack.yaml` by adding to the `spec` section.  A dependency that is not already installed
+will be built via Spack once the environment is concretized and installed.
+
+```
+  specs:
+  - cmake@3.18.2                            ## example from above
+  - my_apps_dependency1@version%compiler    ## other explicitly defined specs
+  - my_apps_dependency2@version%compiler
+```
+
+### Installing the Environment
 
 When in the Spack environment, any packages that are added to the environment file can be installed via:
 
