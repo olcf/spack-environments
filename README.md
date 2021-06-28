@@ -81,19 +81,19 @@ will be built via Spack once the environment is concretized and installed.
 When in the Spack environment, any packages that are added to the environment file can be installed via:
 
 ```
-spack concretize -f
-spack install
+> spack concretize -f
+> spack install
 ```
 
 Alternatively, a user may install a package manually by:
 
 ```
-spack install <my_app_dependencies@version%compiler>
+> spack install <my_app_dependencies@version%compiler>
 ```
 
 ## More Details
 
-For more information regarding Spack and it's usage, please see [the Spack documentation](https://spack.readthedocs.io/).
+For more information regarding Spack and its usage, please see [the Spack documentation](https://spack.readthedocs.io/).
 
 For an extensive tutorial concerning Spack, go to [the Spack 101 tutorial](https://spack-tutorial.readthedocs.io/en/latest/).
 

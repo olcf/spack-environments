@@ -56,6 +56,17 @@ The Spock Spack environment includes this configuration addition:
 This allows the user's newly created instance to use any package installed into the above directory as if it was
 installed by the user.
 
+> ### NOTE ABOUT UPSTREAM SPACK INSTALLATIONS
+>
+> This other instance of Spack has no knowledge of the local Spack instance and may not have the same permissions
+> or ownership as the local Spack instance. This has the following consequences:
+>
+> - Upstream Spack instances are not locked. Therefore it is up to users to make sure that the local instance is not using an upstream instance when it is being modified.
+> - Users should not uninstall packages from the upstream instance. Since the upstream instance doesn’t know about the local instance, it cannot prevent the uninstallation of packages which the local instance depends on.
+>
+> See [here](https://spack.readthedocs.io/en/latest/chain.html#chaining-spack-installations) for more information
+> regarding chained Spack instances.
+
 ## Add Dependencies to the environment
 
 ### Adding User-Defined Dependencies to the environment
@@ -75,19 +86,19 @@ will be built via Spack once the environment is concretized and installed.
 When in the Spack environment, any packages that are added to the environment file can be installed via:
 
 ```
-spack concretize -f
-spack install
+> spack concretize -f
+> spack install
 ```
 
 Alternatively, a user may install an individual package manually by:
 
 ```
-spack install <my_app_dependencies@version%compiler>
+> spack install <my_app_dependencies@version%compiler>
 ```
 
 ## More Details
 
-For more information regarding Spack and it's usage, please see [the Spack documentation](https://spack.readthedocs.io/).
+For more information regarding Spack and its usage, please see [the Spack documentation](https://spack.readthedocs.io/).
 
 For an extensive tutorial concerning Spack, go to [the Spack 101 tutorial](https://spack-tutorial.readthedocs.io/en/latest/).
 
