@@ -190,6 +190,26 @@ spack:
         scalapack: [netlib-scalapack]
       compiler: [gcc@8.3.1, gcc, intel]
   view: false
+  upstreams:
+    olcf:
+      install_tree: /sw/cirrus/spack-envs/base/opt
+    modules:
+      lmod: /sw/cirrus/spack-envs/base/modules/spack
+      tcl: /sw/cirrus/spack-envs/base/modules/flat
+  modules:
+    enable:
+    - lmod
+    - tcl
+    lmod:
+      core_compilers: [gcc@8.3.1]
+      blacklist_implicits: false
+      verbose: true
+      whitelist: []
+    tcl:
+      verbose: false
+      whitelist: []
+      blacklist_implicits: false
+      projections: {}
   config:
     install_tree:
       root: $spack/opt/spack
