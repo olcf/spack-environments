@@ -6,6 +6,11 @@ spack:
   #############################################################################
   mirrors:
     facility_builds: /sw/cirrus/spack-envs/mirrors/builds
+  ## OPTIONAL - add link to custom repos as needed
+  ## NOTE - repos are resolved in order of this list, then default repos
+  #repos:
+  #- <path/to/user/custom/repos>
+  #- /sw/sources/facility-spack/cirrus/share/spack/repos/olcf
   #############################################################################
   packages:
     openmpi:
