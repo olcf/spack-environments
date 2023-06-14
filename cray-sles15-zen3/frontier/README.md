@@ -7,6 +7,7 @@ cd spack
 ```
 
 Clone the `spack.yaml` in this directory and activate the environment.
+Uncomment lines 783 and 784, then change line 784 to the desired installation location.
 
 Test environment with only one spec, `zlib%gcc@12.2.0`
 
