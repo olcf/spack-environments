@@ -6,6 +6,8 @@ cd spack
 . ./share/spack/setup-env.sh
 ```
 
+Clone the `spack.yaml` in this directory and activate the environment.
+
 Test environment with only one spec, `zlib%gcc@12.2.0`
 
 ```
