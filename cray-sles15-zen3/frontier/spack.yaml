@@ -780,8 +780,8 @@ spack:
       version: [6.20.00]
   view: false
   config:
-    install_tree:
-      root: /ccs/home/jmfinney/frontier/projects/spack_env_template/spack/opt
+    #install_tree:
+    #  root: ## FIXME - change to desired installation location
     template_dirs:
     - $spack/share/spack/templates
     build_stage:
