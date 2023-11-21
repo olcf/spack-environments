@@ -1,6 +1,6 @@
 OLCF Spack Environments Templates
 
-Companion files the for: [OLCF Documentaton for spack environments](https://docs.olcf.ornl.gov/software/spack_env/index.html)
+Companion files the for: [OLCF Documentaton for spack environments](https://docs.olcf.ornl.gov/software/spack_environments.html)
 
 ## Purpose
 
