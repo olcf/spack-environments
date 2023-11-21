@@ -4,21 +4,21 @@ This example is intended for use on the CADES Baseline cluster.
 
 ## Purpose
 
-This guide meant as an example for a user to setup a Spack environment for application development using the OLCF 
+This guide meant as a brief example for a user to setup a Spack environment for application development using the OLCF 
 provided files as a template.
 
-The provided Spack environment files are intended to assist OLCF users in setup their development environment at the 
-OLCF.  The base environment file includes the compilers and packages that are installed at the system level.
+The provided Spack environment files are intended to assist users in setup their development environment.
+The base environment file includes the compilers and packages that are installed at the system level.
 
-Traditionally, the user environment is modified by module files, so a user would add use  ``module load openblas/0.3.23`` to 
-load CMake version 3.18.2 into their environment.  Using a Spack environment, a user can add an OLCF provided package
+Traditionally, the user environment is modified by module files, so a user would add use ``module load openblas/0.3.23`` to 
+load OpenBLAS version 0.3.23 into their environment.  Using a Spack environment, a user can add an OLCF provided package
 and build against it using Spack without having to load the module file separately.
 
 The information presented here is a subset of what can be found at [the Spack documentation site](https://spack.readthedocs.io/).
 
 ## Definition
 
-Spack environment - A set of Spack specs for the purpose of building, rebuilding and deploying in a coherent fashion.
+Spack environment - A set of Spack specs for the purpose of building, rebuilding, and deploying in a coherent fashion.
 External packages - An externally-installed package used by Spack, rather than building its own package.
 
 ## Getting Started
@@ -32,7 +32,7 @@ a new Spack environment.  Then use the environment to install the desired packag
 > cd path/to/working/directory
 
 > git clone https://github.com/spack/spack.git
-> git checkout tags/v0.20.2 -b v0.20.2_branch
+> git checkout tags/v0.20.2 -b v0.20.2_branch  ## The current version of the Spack environment was tested against spack v0.20.2
 > source spack/share/spack/setup-env.sh
 
 > git clone https://github.com/olcf/spack-environments
@@ -70,6 +70,8 @@ the ``packages`` section of the ``spack.yaml`` file as shown below:
         - openblas/0.3.23-omp
 ```
 
+This is included in the ``spack.yaml`` file, but has been commented out.  OpenMPI is also included as a commented out example as well.
+
 ### Adding User-Defined Dependencies to the environment
 
 These can be added to the ``spack.yaml`` by adding to the ``specs`` list.  A dependency that is not already installed
@@ -79,7 +81,7 @@ what is needed.
 
 ```
   specs:
-  - cmake@3.18.2                                                ## example from above
+  - openblas@0.3.23                                             ## example from above
   - my_apps_dependency1@version%compiler                        ## other explicitly defined specs
   - my_apps_dependency2 +variant1 ~variant 2 @version%compiler
 ```
@@ -89,14 +91,19 @@ what is needed.
 When in the Spack environment, any packages that are added to the environment file can be installed via:
 
 ```
+> spack clean -ms      ## optional
 > spack concretize -f
 > spack install
 ```
 
+If changes are made to the ``spack.yaml`` file, it is best to use the command ``spack concretize -f`` to force
+Spack to fully concretize the environment.  Also, if a change is not reflected, ``spack clean -ms`` can be used
+to clean the misc and source caches.  The flag ``-a`` can be used to clean all the Spack caches as well.
+
 Alternatively, a user may install an individual package manually by:
 
 ```
-> spack install --add <my_app_dependencies@version%compiler>
+> spack install --add my_app_dependencies@version %compiler@compilerversion
 ```
 
 Here the ``--add`` flag will add the spec to the ``spack.yaml`` file.
