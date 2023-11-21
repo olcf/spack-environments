@@ -1,4 +1,4 @@
-# OCLF User Environment for the CADES Baseline cluster
+# Spack Environment Template for the CADES Baseline cluster
 
 This example is intended for use on the CADES Baseline cluster.
 
